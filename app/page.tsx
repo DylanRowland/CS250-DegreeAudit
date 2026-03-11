@@ -27,12 +27,19 @@ export default function Home() {
               priority
             />
           <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+            className="flex h-12 w-full items-center justify-center gap-2 rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
+            href="https://github.com/DylanRowland/CS250-DegreeAudit"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Documentation
+            <Image
+              className="dark:invert"
+              src="/githublogo.png"
+              alt="GitHub logo"
+              width={30}
+              height={30}
+            />
+            Github
           </a>
         </div>
       </main>
