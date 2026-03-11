@@ -16,7 +16,7 @@ export default function Home() {
             Welcome To Eagle Eyed Scholar
           </h1>
           <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-             Description: Eagle Eyed Scholar is a platform that ...
+             A smarter way to plan your path to SDSU. Track how community college courses apply to your degree and see your progress toward graduation before you even transfer.
           </p>
             <Image
               className="dark:invert"
