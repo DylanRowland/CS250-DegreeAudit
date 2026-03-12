@@ -15,7 +15,12 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Eagle Eyed Scholar",
   description: "website name",
-};
+  icons: {
+    icon: [
+      { url: "/EESlogo.png", sizes: "32x32", type: "image/png" },
+    ],
+  },
+}
 
 export default function RootLayout({
   children,
