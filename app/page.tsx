@@ -45,8 +45,7 @@ export default function Home() {
           Getting Started ↓
         </a>
       </main>
-
-      {/* Getting Started Info*/}
+      {/*Getting Started Info*/}
       <section
         id="getting-started-info"
         className="w-full flex flex-col items-center justify-center bg-white py-20 px-16 dark:bg-black"
@@ -58,6 +57,26 @@ export default function Home() {
           Complete the form beow with your school, courses you have taken, and your intended major to see classes that count towards your major and what classes you need to take. 
         </p>
       </section>
+    
+        {/*About Us Button*/}
+        <a
+          href="#about-us-info"
+          className="mt-2 rounded-full bg-black text-white px-6 py-3 hover:bg-gray-800"
+        >
+          About Us ↓
+        </a>
+      {/* About Us Info */}
+      <section
+        id="about-us-info"
+        className="w-full flex flex-col items-center justify-center bg-white py-20 px-16 dark:bg-black"
+      >
+      <h2 className="text-2xl font-semibold mb-4 text-center">
+        About Us
+      </h2>
+      <p className="max-w-2xl text-center leading-relaxed text-zinc-600 dark:text-zinc-400">
+        We are a group of students at San Diego State University who have experienced the challenges of transferring from a community college to a university. We created Eagle Eyed Scholar to help other students navigate the transfer process and make informed decisions about their education. Our goal is to provide a user-friendly platform that allows students to easily track their progress towards graduation and plan their academic journey with confidence.  
+      </p>
+    </section>
     </div>
   );
 }
