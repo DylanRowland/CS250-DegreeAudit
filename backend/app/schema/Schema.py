@@ -8,5 +8,13 @@ class CourseInput(BaseModel):
 class CourseEquivalency (BaseModel):
     cc_course_name: str
     sdsu_course_name: str
-    units: int
-    is_transferable: bool
+    units: float
+    is_transferable: bool = True
+
+class MajorSchema(BaseModel):
+    major_name: str
+    requirements: List[CourseEquivalency]
+
+class SchoolSchema(BaseModel):
+    school_name: str
+    available_courses: List[CourseEquivalency]
