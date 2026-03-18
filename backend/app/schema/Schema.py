@@ -18,3 +18,12 @@ class MajorSchema(BaseModel):
 class SchoolSchema(BaseModel):
     school_name: str
     available_courses: List[CourseEquivalency]
+
+class DegreeEvalResponseSchema(BaseModel):
+    chosen_major: str
+    chosen_school: SchoolSchema
+    completed_courses: List[CourseEquivalency]
+    uncompleted_courses: List[CourseEquivalency]
+    total_units_completed: float
+    total_units_remaining: float
+    total_units_required: float
