@@ -37,3 +37,4 @@ class JSONExportSchema(BaseModel):
 class ErrorMSG(BaseModel):
     error_msg: str
     unrecognized_input: str
+    total_units_required: float
