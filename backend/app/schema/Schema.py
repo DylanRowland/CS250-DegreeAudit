@@ -27,3 +27,13 @@ class DegreeEvalResponseSchema(BaseModel):
     total_units_completed: float
     total_units_remaining: float
     total_units_required: float
+
+class JSONExportSchema(BaseModel):
+    school: SchoolSchema
+    major: MajorSchema
+    degree_eval: DegreeEvalResponseSchema
+    courses_entered: List[CourseInput]
+
+class ErrorMSG(BaseModel):
+    error_msg: str
+    unrecognized_input: str
