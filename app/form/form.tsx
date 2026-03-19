@@ -1,8 +1,9 @@
 
 export default function Form() {
     return (
-        <div>
-            <h1 className="text-5xl"> Student Info Form </h1>
+        <div>  
+
+            <h1 className="text-5xl" style={{ padding: "1rem"}}> Student Info Form </h1>
             {/* Entering school */}
             <p className="text-2xl" style={{ padding: "1rem"}}> Enter Your School: </p>
 
@@ -47,11 +48,11 @@ export default function Form() {
             {/* Entering courses */}
             <p className="text-2xl" style={{ padding: "1rem"}}> Enter Courses You Have Taken:</p>
             <main style={{ padding: "1rem"}}>
-                <textarea className="border-2 border-black rounded" name="message" rows="5" cols="30">
+                <textarea className="border-2 border-black rounded" name="message" rows="5" cols="40">
                     Type in your courses here
                 </textarea>
-
-                <p className="text-2xl" style={{ padding: "1rem"}}> Or </p>
+                
+                <p className="text-2xl" style={{ padding: "1rem", textIndent: "130px"}}> OR </p>
 
                 <label htmlfor="myfile">Select a .JSON file: </label>
                     <input className="border-2 border-black rounded" type="file" id="myfile" name="myfile"/>
@@ -59,7 +60,11 @@ export default function Form() {
 
             </main>
 
-        
+            {/* Submit Button */}
+            <button className="border-2 border-black rounded ml-35" style={{}} type="submit">Submit Form</button>
+
+
+            
         </div>
         
     );
