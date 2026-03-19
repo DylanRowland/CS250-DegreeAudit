@@ -3,10 +3,11 @@ export default function Form() {
     return (
         <div>
             <h1 className="text-5xl"> Student Info Form </h1>
-            <p className="text-2xl"> Enter Your School: </p>
+            {/* Entering school */}
+            <p className="text-2xl" style={{ padding: "1rem"}}> Enter Your School: </p>
 
             <main style={{ padding: "1rem"}}>
-                <input
+                <input className="border-2 border-black rounded"
                     name="school"
                     list = "schools"
                     placeholder= "School name"
@@ -19,10 +20,11 @@ export default function Form() {
                 </datalist>
             </main>
 
-            <p className="text-2xl"> Enter Your Major:</p>
+            {/* Entering major */}
+            <p className="text-2xl" style={{ padding: "1rem"}}> Enter Your Major:</p>
 
             <main style={{ padding: "1rem"}}>
-                <input
+                <input className="border-2 border-black rounded"
                     name="major"
                     list = "majors"
                     placeholder= "Major"
@@ -41,6 +43,23 @@ export default function Form() {
                     <option value="Psychology"></option>
                 </datalist>
             </main>
+
+            {/* Entering courses */}
+            <p className="text-2xl" style={{ padding: "1rem"}}> Enter Courses You Have Taken:</p>
+            <main style={{ padding: "1rem"}}>
+                <textarea className="border-2 border-black rounded" name="message" rows="5" cols="30">
+                    Type in your courses here
+                </textarea>
+
+                <p className="text-2xl" style={{ padding: "1rem"}}> Or </p>
+
+                <label htmlfor="myfile">Select a .JSON file: </label>
+                    <input className="border-2 border-black rounded" type="file" id="myfile" name="myfile"/>
+                        <br /><br />
+
+            </main>
+
+        
         </div>
         
     );
