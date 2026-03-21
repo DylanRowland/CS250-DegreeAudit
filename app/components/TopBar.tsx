@@ -32,8 +32,12 @@ export default function TopBar() {
       {menuOpen && (
         <div className="absolute top-10 left-0 bg-white shadow-lg border w-48 z-10">
           <ul className="py-2">
-            <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Home</li>
-            <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Form</li>
+            <li className="hover:bg-gray-100">
+              <Link href="/" className="block px-4 py-2">Home</Link>
+            </li>
+            <li className="hover:bg-gray-100">
+              <Link href="/form" className="block px-4 py-2">Form</Link>
+            </li>
           </ul>
         </div>
       )}

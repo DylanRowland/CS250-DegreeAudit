@@ -4,22 +4,22 @@ import TopBar from './components/TopBar';
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center bg-zinc-50 font-sans ">
+    <div className="flex min-h-screen flex-col bg-zinc-50 font-sans">
       <TopBar />
-    <main className="flex w-full max-w-3xl flex-col items-center justify-between py-40 px-16 bg-white sm:items-start">
+    <main className="flex w-full flex-col flex-1 items-center justify-center py-40 px-16">
         {/* Logo and Description */}
         <Image
           src="/EESlogo.png"
           alt="Eagle Eyed Scholar logo"
-          width={100}
-          height={20}
+          width={150}
+          height={30}
           priority
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black">
+        <div className="flex flex-col items-center gap-8 text-center">
+          <h1 className="max-w-4xl text-5xl font-semibold leading-12 tracking-tight text-black">
             Welcome To Eagle Eyed Scholar
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
+          <p className="max-w-3xl text-xl leading-10 text-zinc-600 dark:text-zinc-400">
              A smarter way to plan your path to SDSU. Track how community college courses apply to your degree and see your progress toward graduation before you even transfer.
           </p>
           {/* GitHub */}
@@ -40,18 +40,26 @@ export default function Home() {
           </a>
         </div>
 
-        {/*Getting Started Button*/}
-        <a
-          href="#getting-started-info"
-          className="mt-12 rounded-full bg-black text-white px-6 py-3 hover:bg-gray-800"
-        >
-          Getting Started ↓
-        </a>
+        {/*Getting Started & About Us Buttons*/}
+        <div className="flex gap-4 mt-12">
+          <a
+            href="#getting-started-info"
+            className="rounded-full bg-black text-white px-6 py-3 hover:bg-gray-800"
+          >
+            Getting Started ↓
+          </a>
+          <a
+            href="#about-us-info"
+            className="rounded-full bg-black text-white px-6 py-3 hover:bg-gray-800"
+          >
+            About Us ↓
+          </a>
+        </div>
       </main>
       {/*Getting Started Info*/}
       <section
         id="getting-started-info"
-        className="w-full flex flex-col items-center justify-center bg-white py-20 px-16"
+        className="w-full flex flex-col items-center justify-center bg-zinc-50 py-20 px-16"
       >
         <h2 className="text-2xl font-semibold mb-4 text-center text-black">
           See How Your Courses Apply to Your Degree
@@ -60,18 +68,10 @@ export default function Home() {
           Complete the form below with your school, courses you have taken, and your intended major to see classes that count towards your major and what classes you need to take. 
         </p>
       </section>
-    
-        {/*About Us Button*/}
-        <a
-          href="#about-us-info"
-          className="mt-2 rounded-full bg-black text-white px-6 py-3 hover:bg-gray-800"
-        >
-          About Us ↓
-        </a>
       {/* About Us Info */}
       <section
         id="about-us-info"
-        className="w-full flex flex-col items-center justify-center bg-white py-20 px-16"
+        className="w-full flex flex-col items-center justify-center bg-zinc-50 py-20 px-16"
       >
       <h2 className="text-2xl font-semibold mb-4 text-center">
         About Us
