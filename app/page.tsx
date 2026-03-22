@@ -40,8 +40,8 @@ export default function Home() {
           </a>
         </div>
 
-        {/*Getting Started & About Us Buttons*/}
-        <div className="flex gap-4 mt-12">
+        {/*Buttons*/}
+        <div className="flex gap-4 mt-12 mb-20">
           <a
             href="#getting-started-info"
             className="rounded-full bg-black text-white px-6 py-3 hover:bg-gray-800"
@@ -54,6 +54,12 @@ export default function Home() {
           >
             About Us ↓
           </a>
+          <a
+            href="#contact-us"
+            className="rounded-full bg-black text-white px-6 py-3 hover:bg-gray-800"
+          >
+            Contact Us ↓
+          </a>
         </div>
       </main>
       {/*Getting Started Info*/}
@@ -61,25 +67,45 @@ export default function Home() {
         id="getting-started-info"
         className="w-full flex flex-col items-center justify-center bg-zinc-50 py-20 px-16"
       >
-        <h2 className="text-2xl font-semibold mb-4 text-center text-black">
+        <h2 className="text-3xl font-semibold mb-4 text-center text-black">
           See How Your Courses Apply to Your Degree
         </h2>
-        <p className="max-w-2xl text-center leading-relaxed text-zinc-500 dark:text-zinc-400">
+        <p className="max-w-2xl text-center leading-relaxed text-zinc-500 dark:text-zinc-400 text-lg">
           Complete the form below with your school, courses you have taken, and your intended major to see classes that count towards your major and what classes you need to take. 
         </p>
+        <a
+          href="/form"
+          className="rounded-full bg-[#97da9bff] text-black text-xl px-10 py-2 hover:bg-green-200 mt-10"
+        >
+          Fill Out Form
+        </a>
+
       </section>
       {/* About Us Info */}
       <section
         id="about-us-info"
         className="w-full flex flex-col items-center justify-center bg-zinc-50 py-20 px-16"
       >
-      <h2 className="text-2xl font-semibold mb-4 text-center">
+      <h2 className="text-3xl font-semibold mb-4 text-center">
         About Us
       </h2>
-      <p className="max-w-2xl text-center leading-relaxed text-zinc-500 dark:text-zinc-400">
+      <p className="max-w-2xl text-center leading-relaxed text-zinc-500 dark:text-zinc-400 text-lg">
         We are a group of students at San Diego State University who have experienced the challenges of transferring from a community college to a university. We created Eagle Eyed Scholar to help other students navigate the transfer process and make informed decisions about their education. Our goal is to provide a user-friendly platform that allows students to easily track their progress towards graduation and plan their academic journey with confidence.  
       </p>
     </section>
+    {/* Contact Us Info */}
+    <section
+      id="contact-us"
+      className="w-full flex flex-col items-center justify-center bg-zinc-50 py-20 px-16"
+    >
+      <h2 className="text-3xl font-semibold mb-4 text-center">
+        Contact Us
+      </h2>
+      <p className="max-w-2xl text-center leading-relaxed text-zinc-500 dark:text-zinc-400 text-lg">
+        Have questions or feedback? We'd love to hear from you! Reach out to us at contact@eagleeyedscholar.com.
+      </p>
+    </section>
+
     </div>
   );
 }
