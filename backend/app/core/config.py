@@ -6,6 +6,10 @@ class Settings(BaseSettings):
     DEBUG: bool = True
     API_PORT: int = 8000
     DATABASE_URL: str = ""
+    R2_ACCESS_KEY: str = ""
+    R2_SECRET_KEY: str = ""
+    R2_ENDPOINT_URL: str = ""
+    R2_BUCKET_NAME: str = ""
 
     class Config:
         env_file = ".env"
