@@ -75,7 +75,7 @@ export default function Form() {
             </div>
 
             {/* Footer */}
-            <div className="w-full h-10 bg-[#97da9bff] flex justify-center items-center relative">
+            <div className="w-full h-11 bg-[#97da9bff] flex justify-center items-center relative border-2">
                     <a
                     href="#top-of-form"
                     className="rounded-full bg-black text-white px-5 py-1 hover:bg-gray-800"
