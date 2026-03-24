@@ -2,7 +2,7 @@ from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
 from typing import List
 from app.schemas.Schema import (CourseInput, DegreeEvalResponseSchema,
-SchoolSchema, CourseEquivalency)
+SchoolSchema, CourseEquivalency, JSONExportSchema, MajorSchema)
 
 #Loading in data
 from app.repository.r2Loader import load_majors_programs, load_schools, load_course_equivalencies
@@ -66,3 +66,13 @@ def generate_audit(request: AuditRequest):
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Error generating audit: {str(e)}")
 
+@router.post("/export", response_model=JSONExportSchema)
+def export_audit(request: AuditRequest):
+    #Generate and return full exportable audit JSON
+    audit = generate_audit(request)
+    return JSONExportSchema(
+        school=SchoolSchema(school_name=request.school_name, available_courses=[]),
+        major=MajorSchema(major_name=request.major_name, requirements=[]),
+        degree_eval=audit,
+        courses_entered=request.courses_entered
+    )
