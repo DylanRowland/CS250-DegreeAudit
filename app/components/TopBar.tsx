@@ -35,8 +35,11 @@ export default function TopBar() {
             <li className="hover:bg-gray-100">
               <Link href="/" className="block px-4 py-2">Home</Link>
             </li>
-            <li className="hover:bg-gray-100">
+<li className="hover:bg-gray-100">
               <Link href="/form" className="block px-4 py-2">Form</Link>
+            </li>
+            <li className="hover:bg-gray-100">
+              <Link href="/audit" className="block px-4 py-2">Audit</Link>
             </li>
           </ul>
         </div>
