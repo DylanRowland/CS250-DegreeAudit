@@ -1,7 +1,7 @@
 from fastapi import APIRouter, HTTPException, Query
 from typing import List, Optional
 from app.schemas.Schema import MajorSchema, SchoolSchema
-from app.repository.r2Loader import load_majors_programs, load_schools
+from app.repository.r2_Loader import load_majors_programs, load_schools
 
 router = APIRouter(prefix="/majors", tags=["majors"])
 

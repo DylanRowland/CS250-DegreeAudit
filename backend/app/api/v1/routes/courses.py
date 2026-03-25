@@ -1,7 +1,7 @@
 from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
 from typing import List, Optional
-from app.repository.r2Loader import load_courses, load_course_equivalencies
+from app.repository.r2_Loader import load_courses, load_course_equivalencies
 from app.schemas.Schema import CourseEquivalency
 from pydantic import BaseModel
 

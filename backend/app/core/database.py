@@ -1,6 +1,6 @@
 import boto3
 import json
-from backend.app.core.config import settings
+from app.core.config import settings
 
 def get_R2_client():
     s3 = boto3.client("s3", endpoint_url = settings.R2_ENDPOINT_URL,

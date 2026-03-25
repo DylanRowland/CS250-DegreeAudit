@@ -2,7 +2,7 @@ from fastapi import APIRouter, HTTPException
 from typing import List
 from pydantic import BaseModel
 from app.schemas.Schema import CourseInput, CourseEquivalency
-from app.repository.r2Loader import load_course_equivalencies
+from app.repository.r2_Loader import load_course_equivalencies
 
 router = APIRouter(prefix="/transfers", tags=["transfers"])
 
