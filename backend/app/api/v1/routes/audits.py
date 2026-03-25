@@ -5,7 +5,7 @@ from app.schemas.Schema import (CourseInput, DegreeEvalResponseSchema,
 SchoolSchema, CourseEquivalency, JSONExportSchema, MajorSchema)
 
 #Loading in data
-from app.repository.r2Loader import load_majors_programs, load_schools, load_course_equivalencies
+from app.repository.r2_Loader import load_majors_programs, load_schools, load_course_equivalencies
 
 router = APIRouter(prefix="/audits", tags=["audits"])
 

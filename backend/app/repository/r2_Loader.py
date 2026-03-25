@@ -1,6 +1,6 @@
 import boto3
 import json
-from backend.app.core.config import settings
+from app.core.config import settings
 
 def get_r2_client():
     s3 = boto3.client(

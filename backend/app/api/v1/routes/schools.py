@@ -1,7 +1,7 @@
 from fastapi import APIRouter, HTTPException
 from typing import List
 from app.schemas.Schema import SchoolSchema
-from app.repository.r2Loader import load_schools
+from app.repository.r2_Loader import load_schools
 
 router = APIRouter(prefix="/schools", tags=["schools"])
 
