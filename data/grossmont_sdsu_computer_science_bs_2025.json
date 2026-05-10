@@ -1,0 +1,103 @@
+{
+  "major": "Computer Science, B.S.",
+  "sendingSchool": "Grossmont College",
+  "receivingSchool": "San Diego State University",
+  "catalogYear": "2025-2026",
+  "published": "2025-10-06T22:13:52.2152411",
+  "notes": [
+    "Due to high demand, admission to SDSU is highly competitive.",
+    "Preparation for Major courses must be completed with a grade of C (2.0) or better and cannot be taken for credit/no credit (Cr/NC)."
+  ],
+  "requirements": [
+    {
+      "sdsu": "MATH 245",
+      "title": "Discrete Mathematics",
+      "grossmont": [
+        "MATH 245",
+        "CSIS 240"
+      ]
+    },
+    {
+      "sdsu": "MATH 254",
+      "title": "Introduction to Linear Algebra",
+      "grossmont": [
+        "MATH 284"
+      ]
+    },
+    {
+      "sdsu": "STAT 250",
+      "title": "Statistical Principles and Practices",
+      "grossmont": [
+        "ANTH 215",
+        "PSY 215",
+        "SOC 215",
+        "BIO 215"
+      ]
+    },
+    {
+      "sdsu": "MATH 150",
+      "title": "Calculus I",
+      "grossmont": [
+        "MATH 180"
+      ]
+    },
+    {
+      "sdsu": "MATH 151",
+      "title": "Calculus II",
+      "grossmont": [
+        "MATH 280"
+      ]
+    },
+    {
+      "sdsu": "CS 150 + CS 150L",
+      "title": "Introduction to Computer Programming",
+      "grossmont": [
+        "CSIS 250",
+        "CSIS 293",
+        "CSIS 296"
+      ]
+    },
+    {
+      "sdsu": "CS 160 + CS 160L",
+      "title": "Intermediate Computer Programming",
+      "grossmont": [
+        "CSIS 251",
+        "CSIS 294",
+        "CSIS 297"
+      ]
+    },
+    {
+      "sdsu": "CS 240",
+      "title": "Computer Organization",
+      "grossmont": [
+        "CSIS 165"
+      ]
+    },
+    {
+      "sdsu": "CS 210",
+      "title": "Data Structures",
+      "grossmont": [],
+      "status": "Denied"
+    },
+    {
+      "sdsu": "CS 250",
+      "title": "Introduction to Software Systems",
+      "grossmont": [],
+      "status": "No Articulation Listed"
+    },
+    {
+      "sdsu": "PHYS 195 + PHYS 195L",
+      "title": "Principles of Physics I",
+      "grossmont": [
+        "PHYC 201"
+      ]
+    },
+    {
+      "sdsu": "PHYS 196 + PHYS 196L",
+      "title": "Principles of Physics II",
+      "grossmont": [
+        "PHYC 202"
+      ]
+    }
+  ]
+}
