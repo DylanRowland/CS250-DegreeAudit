@@ -1,5 +1,7 @@
 'use client'
 import { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
+import { apiUrl, AUDIT_SESSION_KEY } from '@/lib/api';
 
 interface School {
   school_name: string;
@@ -13,8 +15,28 @@ interface CourseInput {
   course_name: string;
   community_college: string;
 }
+// Implement json fetching from database
+async function fetchJsonList<T>(url: string): Promise<T[]> {
+  try {
+    const res = await fetch(url);
+    const data: unknown = await res.json();
+    if (!res.ok || !Array.isArray(data)) {
+      if (!res.ok) {
+        console.error('API error', res.status, data);
+      } else {
+        console.error('Expected JSON array from', url, data);
+      }
+      return [];
+    }
+    return data as T[];
+  } catch (err) {
+    console.error('Fetch failed', url, err);
+    return [];
+  }
+}
 
 export default function Form() {
+  const router = useRouter();
   const [schools, setSchools] = useState<School[]>([]);
   const [majors, setMajors] = useState<Major[]>([]);
   const [selectedSchool, setSelectedSchool] = useState('');
@@ -25,22 +47,30 @@ export default function Form() {
 
   // Fetch schools
   useEffect(() => {
-    fetch('http://localhost:8001/api/v1/schools')
-      .then(res => res.json())
-      .then(data => setSchools(data))
-      .catch(err => console.error('Fetch schools error:', err));
+    let cancelled = false;
+    fetchJsonList<School>(apiUrl('/api/v1/schools')).then((list) => {
+      if (!cancelled) setSchools(list);
+    });
+    return () => {
+      cancelled = true;
+    };
   }, []);
 
   // Fetch majors for selected school
   useEffect(() => {
-    if (selectedSchool) {
-      fetch(`http://localhost:8001/api/v1/majors?school_name=${selectedSchool}`)
-        .then(res => res.json())
-        .then(data => setMajors(data))
-        .catch(err => console.error('Fetch majors error:', err));
-    } else {
+    if (!selectedSchool) {
       setMajors([]);
+      return;
     }
+    let cancelled = false;
+    fetchJsonList<Major>(
+      apiUrl(`/api/v1/majors?school_name=${encodeURIComponent(selectedSchool)}`)
+    ).then((list) => {
+      if (!cancelled) setMajors(list);
+    });
+    return () => {
+      cancelled = true;
+    };
   }, [selectedSchool]);
 
   const handleSubmit = async () => {
@@ -53,8 +83,8 @@ export default function Form() {
         course_name: course,
         community_college: selectedSchool
       }));
-
-      const response = await fetch('http://localhost:8001/api/v1/audits/generate', {
+      // Get api request 
+      const response = await fetch(apiUrl('/api/v1/audits/generate'), {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -70,6 +100,12 @@ export default function Form() {
 
       const auditResult = await response.json();
       setResult(auditResult);
+      try {
+        sessionStorage.setItem(AUDIT_SESSION_KEY, JSON.stringify(auditResult));
+      } catch {
+        /* ignore quota / private mode */
+      }
+      router.push('/audit');
     } catch (error) {
       console.error('Audit error:', error);
       setResult({ error: 'Failed to generate audit. Check console.' });
