@@ -11,6 +11,8 @@ class Settings(BaseSettings):
     R2_SECRET_KEY: str = ""
     R2_ENDPOINT_URL: str = ""
     R2_BUCKET_NAME: str = ""
+    ## Allows browser to call api for testing
+    CORS_ORIGINS: str = "http://localhost:3000,http://127.0.0.1:3000"
 
     class Config:
         env_file = ".env"
