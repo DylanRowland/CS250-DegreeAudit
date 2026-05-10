@@ -1,6 +1,11 @@
 import boto3
 import json
 from app.core.config import settings
+from app.repository.catalog_normalize import (
+    normalize_equivalencies,
+    normalize_majors,
+    normalize_schools,
+)
 
 def get_r2_client():
     s3 = boto3.client(
