@@ -15,12 +15,21 @@ def list_majors(
         
         if school_name:
             schools = load_schools()
-            school_majors = []
+            school_majors:list = []
+            matched_school = False
             for school in schools:
                 if school["school_name"].lower() == school_name.lower():
-                    school_majors = school.get("available_majors", [])
+                    matched_school = True
+                    raw = school.get("available_majors", [])
+                    school_majors = raw if isinstance(raw, list) else []
                     break
-            majors = [m for m in majors if m["major_name"] in school_majors]
+            if matched_school and school_majors:
+                majors = [m for m in majors if m["major_name"] in school_majors]
+            elif matched_school and not school_majors:
+                pass
+            else:
+                # If no major show nothing
+                majors = []
         
         return majors
     except Exception as e:
