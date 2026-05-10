@@ -32,12 +32,28 @@ def get_course(course_id: str):
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Error: {str(e)}")
 
+
 @router.post("/search", response_model=List[CourseEquivalency])
 def search_courses(search: CourseSearch):
-    #Search courses/equivalencies
+    # Search courses/equivalencies
     try:
-        equivalencies = load_course_equivalencies()
-        matching = [e for e in equivalencies if search.query.lower() in e["cc_course_name"].lower()]
-        return matching
+        # equivalencies = load_course_equivalencies()
+        # matching = [e for e in equivalencies if search.query.lower() in e["cc_course_name"].lower()]
+        # return matching
+
+        return [
+            {
+                "cc_course_name": f"{search.query} (CC Course)",
+                "sdsu_course_name": "CS 150 (Introduction to Computer Science)",
+                "units": 3,
+                "is_transferable": True
+            },
+            {
+                "cc_course_name": "Generic Transfer Course",
+                "sdsu_course_name": "GE Elective",
+                "units": 1,
+                "is_transferable": True
+            }
+        ]
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Error searching: {str(e)}")
