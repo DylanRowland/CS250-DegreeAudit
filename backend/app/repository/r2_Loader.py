@@ -28,13 +28,16 @@ def load_courses():
     return load_json_file('courses.json')
 
 def load_course_equivalencies():
-    return load_json_file('course_equivalencies.json')
+    return normalize_equivalencies(load_json_file('course_equivalencies.json'))
 
 def load_course_tags():
     return load_json_file('course_tags.json')
 
+def load_degree_requirements():
+    return load_json_file('degree_requirements.json')
+
 def load_majors_programs():
-    return load_json_file('majors_programs.json')
+    return normalize_majors(load_json_file('majors_programs.json'))
 
 def load_schools():
-    return load_json_file('schools.json')
+    return normalize_schools(load_json_file('schools.json'))
