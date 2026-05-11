@@ -1,6 +1,11 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
+If tailwind isnt installed through the command below, install it through this command
+```bash
+npm install -D tailwindcss @tailwindcss/postcss
+```
+
 
 First, make sure you have all the dependencies installed
 ```bash
@@ -26,7 +31,7 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
 ## Starting/Testing Backend
-
+Open up a new termina apart from the frontend terminal.
 First cd into the backend
 ```bash
 cd backend
@@ -51,12 +56,12 @@ source .venv/bin/activate
 
 Then install all of the dependencies
 ```bash
-uv pip install fastapi uvicorn
+uv pip install fastapi "uvicorn[standard]" pydantic pydantic-settings boto3
 ```
 
 Lastly, run the server!
 ```bash
-uv run uvicorn main:app --reload --port 8000
+uv run uvicorn main:app --reload --host 127.0.0.1 --port 8000
 ```
 
 To open Swagger UI make sure you are on this url:
